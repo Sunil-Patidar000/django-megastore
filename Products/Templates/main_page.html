@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second</title>
+    <link rel="stylesheet" href="{% static 'css/second_buyer_base.css'%}">
+</head>
+<body>
+     <!-- navbar -->
+    <nav class="navbar_2">
+        <div class="logo">
+            <a href="{% url 'home'%}"><img src="{% static 'image/logo.png' %}" alt="logo" class="img_logo"></a>
+        </div>
+        <div class="search_bar">
+            <img src="{% static 'image/search.svg' %}" alt="search" class="search_icon">
+            <input type="text"  placeholder="Search for Products, Brands and More" class="input_container">
+            <img src="{% static 'image/mic.svg' %}" alt="mic" class="mic">
+        </div>
+        <div class="links">
+            <div class="Account">
+                 <a href="#">
+                    <img src="{% static 'image/user.svg' %}" alt="user-login" class="links_img">
+                    {% if user.is_authenticated %}{{ user.username }}{% else %}Account{% endif %}
+                </a>
+                <div class="hover_list">
+                    <ul class="drop_down">
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Signup</a></li>
+                        <li><a href="#">Coupons</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="#" style="cursor: not-allowed;">Logout</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="seller">
+                <a href="#"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
+                Become a Seller
+                </a>
+            </div>
+            <div class="menu">
+                More
+                <ul class="drop_down">
+                    <li><a href="#">Customer</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="cart">
+                <a href="{% url 'cart' %}">
+                    <img src="{% static 'image/cart.svg' %}" alt="cart" class="links_img">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'cart' %}">Cart</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}?next=cart">Cart</a></li>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </nav>
+      <!-- Categories -->
+         <div class="Categories">
+            <ul class="cat_menu">
+                <li><a href="/mobiles">Mobiles</a></li>
+                <li><a href="#">Appliances</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Home & Kitchen</a></li>
+                <li><a href="#">Toys</a></li>
+                <li><a href="#">Furniture</a></li>
+                <li><a href="#">Groecery</a></li>
+            </ul>
+         </div>
+
+    <main>
+         <!-- hero section -->
+        {% for products in products %}
+         <div class="landing_page">
+            <div class="img_side">
+                <img src="{{ products.image.url }}" alt="{{ products.name }}">     
+            </div>
+           
+            <div class="details">
+                <h3>{{ products.name }}</h3>
+                <h5>{{ products.price }}</h5>
+                <ul>
+                    <li> {{ products.short_description|linebreaks }}</li>
+                    <!-- <li>12 Gb Ram | 512gb Rom</li>
+                    <li>16.64 cm (6.55 inch) Display</li>
+                    <li>50MP Rear Camera 1 32MP + 32MP Dual Front Camera</li>
+                    <li>4700 mAh Battery</li>
+                    <li>8s Gen 3 Mobile Platform Processor</li>
+                    <li>1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In the Box Accessories</li> -->
+                </ul>
+                <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam et fugit nisi ipsum quaerat, aut necessitatibus sunt accusantium nulla commodi nobis culpa sit non cumque illo sed molestiae facilis perspiciatis!</p> -->
+                <div class="btn">
+                    <button class="btn-1">Add to Cart</button>
+                    <button class="btn-2">Buy Now</button>
+                </div>
+            </div>
+            
+         </div>
+        {% endfor %}
+         <div class="suggestion">
+            <div class="Deals">
+                <h3>Similar Products</h3>
+                <div class="main_container">
+                    <div class="cards">
+                        <img src="{% static 'image/pixel.webp'%}" alt="" class="img">
+                        <p class="name">Google Pixel 9</p>
+                        <p class="price">Just ₹34,999*</p>
+                    </div>
+                    <div class="cards">
+                        <img src="{% static 'image/sam.webp'%}" alt="" class="img">
+                        <p class="name">Galaxy S24 5G</p>
+                        <p class="price">From ₹39,999*</p>
+                    </div>
+                    <div class="cards">
+                        <img src="{% static 'image/moto.webp'%}" alt="" class="img">
+                        <p class="name">Moto G96 5G</p>
+                        <p class="price">Just ₹14,999*</p>
+                    </div>
+                    <div class="cards">
+                        <img src="{% static 'image/galaxy.webp'%}" alt="" class="img">
+                        <p class="name">Galaxy S24 FE 5G</p>
+                        <p class="price">From ₹29,999*</p>
+                    </div>
+                    <div class="cards">
+                        <img src="{% static 'image/vivo.webp'%}" alt="" class="img">
+                        <p class="name">vivo T4 Lite 5G</p>
+                        <p class="price">Just ₹8,999*</p>
+                    </div>
+                    <div class="cards">
+                        <img src="{% static 'image/moto60.webp'%}" alt="" class="img">
+                        <p class="name">Moto Edge 60 Pro 5G</p>
+                        <p class="price">Just ₹24,999*</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </main>
+
+      <!-- footer -->
+    <footer class="footer">
+        <div class="f-1">
+            <div class="1">
+                <ul class="first">
+                    <h4>About</h4>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corprate Information</a></li>
+                </ul>
+            </div>
+            <div class="2">
+                <ul class="second">
+                    <h4>Group Compaines</h4>
+                    <li><a href="#">Myntra</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="3">
+                <ul class="third">
+                    <h4>Help</h4>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancelletion & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="4">
+                <ul class="fourth">
+                    <h4>Consumer Policy</h4>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Grivance Redresal</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>  
+            </div>
+            <div class="5">
+                <h4>Mail Us :</h4>
+                <p>
+                    MegaStore Internet Private Limited,<br>
+                    Buildings Alyssa, Begonia & <br>
+                    Clove Embassy Tech Village,<br>
+                    Outer Ring Road, Devarabeesanahalli Village,<br>
+                    Bengaluru, 560103,<br>
+                    Karnataka, India <br>
+                </p>
+            </div>          
+        </div>
+        <div class="f-2">
+            <p>2007-2025 MegaStore.com</p>
+            <div><img src="{% static 'image/f.svg'%}" alt="f"></div>
+        </div>
+    </footer>
+</body>
+</html>

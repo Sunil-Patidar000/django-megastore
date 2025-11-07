@@ -1,0 +1,150 @@
+{% extends "buyer_base.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- main body -->
+     <!-- hero section -->
+    <main class="main_class">
+        <!-- Categories -->
+         <div class="Categories">
+            <ul class="cat_menu">
+                <li><a href="/main_page">
+                    <img src="{% static 'image/mobiles.webp'%}" alt="mobile">
+                    Mobiles
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/washing.webp'%}" alt="mobile">
+                    Appliances
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/tv.webp'%}" alt="mobile">
+                    Electronics
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/fashoin.webp'%}" alt="mobile">
+                    Fashion
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/home.webp'%}" alt="mobile">
+                    Home & Kitchen
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/Toy.webp'%}" alt="mobile">
+                    Toys
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/Furniture.webp'%}" alt="mobile">
+                    Furniture
+                </a></li>
+                <li><a href="#">
+                    <img src="{% static 'image/Groecery.webp'%}" alt="mobile">
+                    Groecery
+                </a></li>
+            </ul>
+         </div>
+
+         <!-- Big-Card -->
+         <div class="big_card">
+            <!-- <button class="btn_left"><span class="arrow left"></span></button> -->
+            <div class="image_card"><img src="{% static 'image/Bigcard.webp' %}" alt="image" class="img"></div>
+            <!-- <button class="btn_right"><span class="arrow right"></span></button> -->
+         </div>
+         <!-- Deals -->
+
+         <div class="Deals">
+            <h3>Best deals on smartphone</h3>
+            <div class="main_container">
+                <div class="cards">
+                    <img src="{% static 'image/pixel.webp'%}" alt="" class="img">
+                    <p class="name">Google Pixel 9</p>
+                    <p class="price">Just ₹34,999*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/sam.webp'%}" alt="" class="img">
+                    <p class="name">Galaxy S24 5G</p>
+                    <p class="price">From ₹39,999*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/moto.webp'%}" alt="" class="img">
+                    <p class="name">Moto G96 5G</p>
+                    <p class="price">Just ₹14,999*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/galaxy.webp'%}" alt="" class="img">
+                    <p class="name">Galaxy S24 FE 5G</p>
+                    <p class="price">From ₹29,999*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/vivo.webp'%}" alt="" class="img">
+                    <p class="name">vivo T4 Lite 5G</p>
+                    <p class="price">Just ₹8,999*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/moto60.webp'%}" alt="" class="img">
+                    <p class="name">Moto Edge 60 Pro 5G</p>
+                    <p class="price">Just ₹24,999*</p>
+                </div>
+            </div>
+         </div>
+
+          <!-- six card -->
+        <div class="six_card">
+            <div class="three_card_first">
+                <img src="{% static 'image/1.webp'%}" alt="1">
+                <img src="{% static 'image/2.webp'%}" alt="2">
+                <img src="{% static 'image/3.webp'%}" alt="3">
+            </div>
+            <div class="three_card_second">
+                <img src="{% static 'image/4.webp'%}" alt="4">
+                <img src="{% static 'image/5.webp'%}" alt="5">
+                <img src="{% static 'image/6.webp'%}" alt="6">
+            </div>
+        </div>
+
+        <!-- Best deals on appliances -->
+          <div class="Deals_Second">
+            <h3>Best deals on appliances</h3>
+            <div class="main_container">
+                <div class="cards">
+                    <img src="{% static 'image/tva.webp'%}" alt="" class="img">
+                    <p class="name">65 / 75 inch TVs</p>
+                    <p class="price">From ₹30,849*</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/washinga.webp'%}" alt="" class="img">
+                    <p class="name">Trending deals</p>
+                    <p class="price">Shop now!</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/microwawe.webp'%}" alt="" class="img">
+                    <p class="name">Microwave Ovens</p>
+                    <p class="price">From ₹4,990</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/mixer.webp'%}" alt="" class="img">
+                    <p class="name">Kitchen Essentials</p>
+                    <p class="price">From ₹1249</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/homea.webp'%}" alt="" class="img">
+                    <p class="name">Home Essentials</p>
+                    <p class="price">Shop Now!</p>
+                </div>
+                <div class="cards">
+                    <img src="{% static 'image/fans.webp'%}" alt="" class="img">
+                    <p class="name">Fans & Geysers</p>
+                    <p class="price">From ₹799</p>
+                </div>
+            </div>
+         </div>
+         <!-- Banner -->
+          <div class="Banner">
+            <img src="{% static 'image/shoes.webp'%}" alt="">
+            <img src="{% static 'image/levis.webp'%}" alt="">
+            <img src="{% static 'image/bag.webp'%}" alt="">
+            <img src="{% static 'image/watch.webp'%}" alt="">
+          </div>
+
+    </main>
+
+{% endblock %}

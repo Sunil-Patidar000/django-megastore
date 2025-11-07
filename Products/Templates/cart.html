@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'css/second_buyer_base.css' %}">
+</head>
+<body>
+    <!-- navabar -->
+    <nav class="navbar_2">
+        <div class="logo">
+            <a href="{% url 'home'%}"><img src="{% static 'image/logo.png' %}" alt="logo" class="img_logo"></a>
+        </div>
+        <div class="search_bar">
+            <img src="{% static 'image/search.svg' %}" alt="search" class="search_icon">
+            <input type="text"  placeholder="Search for Products, Brands and More" class="input_container">
+            <img src="{% static 'image/mic.svg' %}" alt="mic" class="mic">
+        </div>
+        <div class="links">
+            <div class="Account">
+                 <a href="#">
+                    <img src="{% static 'image/user.svg' %}" alt="user-login" class="links_img">
+                    {% if user %}{{ user.username }}{% else %}Account{% endif %}
+                </a>
+                <div class="hover_list">
+                    <ul class="drop_down">
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Signup</a></li>
+                        <li><a href="#">Coupons</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="#" style="cursor: not-allowed;">Logout</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="seller">
+                <a href="#"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
+                Become a Seller
+                </a>
+            </div>
+            <div class="menu">
+                More
+                <ul class="drop_down">
+                    <li><a href="#">Customer</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- cart hero section -->
+    <div class="main_cart">
+        <div class="cart_details">
+            <div class="main_section">
+                <div class="cart-card" style="border-top: none;">1</div>
+                <div class="cart-card">2</div>
+                
+            </div>
+            <div class="place_order">
+                <button type="Submit" class="place_order_btn">PLACE ORDER</button>
+            </div>
+        </div>
+        <div class="price_cart">
+            total price
+        </div>
+    </div>
+
+    <!-- cart footer -->
+
+    <footer class="cart_footer">
+        <div class="cf1">
+            2007-2025 Megastore.com
+        </div>
+    </footer>
+
+</body>
+</html>

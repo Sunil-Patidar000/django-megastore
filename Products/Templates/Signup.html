@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/S-L.css' %}">
+    <title>Signup</title>
+</head>
+<body>
+     <div class="signin-page">
+        
+        <div>
+            <img src="{%static 'image/sign.webp'%}" alt="img">
+        </div>
+        
+      <form action="" method="POST" id="signin-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="btn">
+            <button>SIGNUP</button>
+        </div>
+        <div class="ext">
+            <a href="/Login">Existing User? Login</a>
+        </div>
+      </form>
+      <span><a href="{% url 'home'%}">&times;</a></span>
+     </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/S-L.css' %}">
+</head>
+<body>
+    <div class="signin-page">
+        
+        <div>
+            <img src="{%static 'image/sign.webp'%}" alt="img">
+        </div>
+        
+      <form action="" method="POST" id="signin-form">
+        {% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert" style="color: green; font-weight: 600; margin-bottom: 10px;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <label for="username">Username</label>
+        <input type="text" required id="username" name="username" placeholder="Enter your name">
+
+        <label for="password">Enter Your Password</label>
+        <input type="password" required id="password" name="password" placeholder="Enter your Password">
+            
+        <div class="btn">
+            <button>Login</button>
+        </div>
+        <div class="ext">
+            <a href="/Signup">New to MegaStore? Create an account</a>
+        </div>
+            
+      </form>
+      <span><a href="{% url 'home' %}">&times;</a></span>
+     </div>
+</body>
+</html>

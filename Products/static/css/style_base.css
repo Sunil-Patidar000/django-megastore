@@ -1,0 +1,455 @@
+/* common css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* color */
+    --bg-color:#F1F3F6;
+    --tx-color:#212121;
+    --card-color:#FFFFFF;
+
+    /* Font */
+    --heading-font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    --heading-weight:700;
+    --text-font:"Inter", Arial, sans-serif;
+    --text-weight:400; 
+
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--text-font);
+    font-weight: var(--text-weight);
+    padding-top: 70px; 
+    overflow-x: hidden;
+    margin:0;
+}
+
+/* navbar */
+.navbar{
+    position: fixed;
+    background-color:white;
+    height: 70px;
+    width: 100%;
+    padding: 10px 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 3%;
+    gap: 2.5%;
+    top:0;
+
+    .logo{
+        margin-left: 45px;
+         .img_logo{
+            height: 60px;
+         }
+    }
+    .search_bar{
+        height: 40px;
+        width:100%;
+        background-color: #f0f5ff;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px 7px;
+        
+        .search_icon{
+            height: 32px;
+            width: 50px;
+        }
+        .input_container{
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            font-size: 17px;
+            outline: 0;
+        }
+        .mic{
+            height: 32px;
+            width: 50px;
+        }
+    }
+
+   .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    gap: 70px;
+    .Account{
+        position: relative;
+        a{
+            gap: 5px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #212121;
+            font-weight: var(--text-weight);
+        }
+        .hover_list{
+            display: none;
+            position: absolute;
+            top: 100%;
+            left:0;
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            min-width: 100px;
+            width: 125px;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+            border-radius: 12px;
+            z-index: 100;
+            font: 22px;
+            font-weight: var(--text-weight);
+            line-height: 25px;
+        }
+    }
+    .Account:hover{
+        border-radius: 4px;
+        background-color: #f0f0f0;
+        border: 2px solid none;
+        padding: 5px 10px;
+        margin: -5px -10px;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+    }
+    .Account:hover .hover_list{
+        display: block;
+        margin-top: 1px;
+       .drop_down{
+            list-style: none;
+            margin-block-start: 0.6em;
+            margin-block-end: 0.6em;
+            padding-inline-start: 35px;        
+        }
+    }
+    .cart{
+        display: flex;
+        li{
+            list-style: none;
+        }
+        
+        a{
+            gap: 5px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #212121;
+            font-weight: var(--text-weight);
+        }
+    }
+    .seller{
+        a{
+            white-space: nowrap;
+            gap: 5px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            align-items: center;
+            color: #212121;
+            font-weight: var(--text-weight);
+        }
+    }
+    .menu{
+        position:relative;
+        .drop_down{
+            display:none;
+            position: absolute;
+            top: 100%;
+            right:-46px; 
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            min-width: 100px;
+            width: 125px;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+            border-radius: 12px;
+            z-index: 100;
+            font: 22px;
+            font-weight: var(--text-weight);
+            line-height: 25px;
+        }
+    }
+    .menu:hover{
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        border: 2px solid none;
+        padding: 5px 10px;
+        margin: -5px -10px;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+    }
+    .menu:hover .drop_down{
+        display: block;
+        list-style: none;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+        padding-inline-start: 35px;
+        li{
+            a{
+                text-decoration: none;
+                color: #212121;
+                font: 22px;
+            }
+            
+        }
+    }
+   }
+}
+
+/* body */
+.main_class{
+    padding-top: 1px;
+}
+
+/* Categories */
+.Categories{
+    display: flex;
+    margin: 8px 20px 0px 20px;
+    height: 125px;
+    background-color: white;
+    cursor: pointer; 
+    padding: 0px 105px;  
+    .cat_menu{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333333;
+            font-size:16px;
+            font-weight: 500;
+            gap: 2px;
+        }
+    }
+}
+
+/* Big_card */
+
+.big_card{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18px 20px 0px 20px;
+    height: 300px;
+    .image_card{
+        height: 100%;
+        .img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    /* .arrow{
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        width: 20px;
+    }
+    .left::before{
+        content: "";
+        height: 10px;
+        width: 10px;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%) rotate(-45deg);
+        }
+
+    .btn_left{
+       background-color: white;
+    }
+    .right::after{
+        content: "";
+        height: 10px;
+        width: 10px;
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    .btn_right{
+        background-color: white;
+    } */
+}
+/* Deals */
+
+.Deals{
+    height: 335px;
+    margin: 18px 20px 10px 20px;
+    background-color: white;
+    /* padding top di taki h3 ki margin kam kar sake */
+    padding-top:1px;  
+    h3{
+       margin-top: 23px;
+       margin-left: 20px;
+    }
+    .main_container{
+        margin-top: 20px;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 80%;
+        width: 100%;
+        flex-wrap: nowrap;
+        .cards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            .img{
+                height: 170px;
+                width: 100%;
+            }
+            .name{
+                color: #1f1f1f;
+                font: 14px;
+            }
+            .price{
+                color: #1f1f1f;
+                font: 14px;
+                font-weight: 600;
+            }
+        }
+        
+    }
+}
+
+/* Six card */
+.six_card{
+    height: 535px;
+    margin: 18px 20px 0 20px;
+    background-color: white;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+
+
+    .three_card_first{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+     
+        
+    }
+    .three_card_second{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;        
+    }
+    .three_card_first img, .three_card_second img{
+        width: calc(33.333% - 7px);
+        min-width: 0;
+        height: auto;
+        flex-shrink: 1; 
+    }
+}
+
+/* Best deals on appliances */
+.Deals_Second{
+    height: 335px;
+    margin: 18px 20px 10px 20px;
+    background-color: white;
+    padding-top:1px;  
+    h3{
+       margin-top: 23px;
+       margin-left: 20px;
+    }
+    .main_container{
+        margin-top: 35px;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 80%;
+        width: 100%;
+        .cards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            gap: 6px;
+            .img{
+                height: 172px;
+                width: 100%;
+            }
+            .name{
+                color: #1f1f1f;
+                font: 14px;
+                text-wrap: nowrap;
+            }
+            .price{
+                color: #1f1f1f;
+                font: 14px;
+                font-weight: 600;
+            }
+        }
+        
+    }
+}
+/* Banner */
+.Banner{
+    margin: 18px 20px 0px 20px;
+    height: 170px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1px;
+    img{
+       height: 100%;
+       flex: 1;
+       max-width: 100%;
+    }
+}
+
+/* footer */
+.footer{
+    margin-top: 65px;
+    height: 360px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 300px 60px;
+    
+    .f-1{
+       background-color: #212121; 
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr 1.25fr;
+       align-content: center;
+       justify-items: center;
+       h4{
+        color: #ababa2;
+        margin-bottom: 12px;
+        font-weight: 100;
+       }
+       li,a,p{
+        color: white;
+        list-style: none;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+       }
+
+    }
+    .f-2{
+        background-color: #212121;
+        border-top: 2px solid #454d5e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+        p{
+            color: white;
+        }
+        
+    }
+}
+

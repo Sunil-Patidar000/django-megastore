@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 400;
+    background-color: #3b444b;
+}
+/* signin-css */
+.signin-page{
+    display: flex;
+    background-color: white;
+    height: 600px;
+    width: 900px;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    img{
+        max-height: 100%;
+    }
+    span{
+        height: 35px;
+        width: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 30px;
+        a{
+            text-decoration: none;
+        }
+    }
+    
+    #signin-form{
+        margin-top: 60px;
+        margin-left: 5px;
+        width: 60%;
+        display: grid;
+        grid-template-rows: repeat(6,1fr);
+        gap: 2px;
+        justify-content: center;
+        label{
+            display: flex;
+            align-items: flex-end;
+        }
+        input{
+            height: 35px;
+            width: 410px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom:2px solid #2874f0;
+            cursor: pointer;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            background-color:#FB641B;
+            color: white;
+            font-weight: 400;
+            height: 45px;
+            width:400px;
+            border: none;
+            cursor: pointer;
+        }
+        .ext{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;        
+        }
+    }
+
+}
