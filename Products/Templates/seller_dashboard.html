@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Dashboard | MegaStore</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      margin: 0; padding: 0;
+      background: #fafafa;
+    }
+    header {
+      background: #6c63ff; color: white;
+      padding: 15px 25px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .container {
+      padding: 30px;
+    }
+    .btn {
+      background: white; color: #6c63ff;
+      padding: 8px 15px; border-radius: 8px;
+      text-decoration: none; font-weight: bold;
+    }
+    .btn:hover { background: #e6e4ff; }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Seller Dashboard</h2>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h3>Welcome, {{ request.user.username }}!</h3>
+      <p>Manage your shop, view products, and track orders.</p>
+    </div>
+
+    <div class="card">
+      <a href="#" class="btn">➕ Add Product</a>
+      <a href="#" class="btn">📦 View Products</a>
+      <a href="#" class="btn">📊 Analytics</a>
+    </div>
+  </div>
+</body>
+</html>

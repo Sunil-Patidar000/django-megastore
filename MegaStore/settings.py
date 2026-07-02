@@ -76,9 +76,9 @@ WSGI_APPLICATION = "MegaStore.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'MegaStore',   # tumhari database ka naam
-        'USER': 'root',          # mysql user (zyadatar root hota hai)
-        'PASSWORD': '1234',  # apna password daalo
+        'NAME': 'MegaStore',  
+        'USER': 'root',          
+        'PASSWORD': '1234',  
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -128,3 +128,6 @@ STATICFILES_DIRS =[
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

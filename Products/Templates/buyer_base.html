@@ -39,17 +39,17 @@
                 </div>
             </div>
             <div class="cart">
-                <a href="{% url 'cart' %}">
+                <a href="{% url 'cart_view' %}">
                     <img src="{% static 'image/cart.svg' %}" alt="cart" class="links_img">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'cart' %}">Cart</a></li>
+                        <li><a href="{% url 'cart_view' %}">Cart</a></li>
                     {% else %}
-                        <li><a href="{% url 'login' %}?next=cart">Cart</a></li>
+                        <li><a href="{% url 'login' %}?next=cart_view">Cart</a></li>
                     {% endif %}
                 </a>
             </div>
             <div class="seller">
-                <a href="#"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
+                <a href="{% url 'seller_login' %}"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
                 Become a Seller
                 </a>
             </div>

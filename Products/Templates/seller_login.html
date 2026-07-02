@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Login | MegaStore</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      background: #f3f3f3;
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white; padding: 25px 30px; border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 { text-align: center; color: #333; }
+    input {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border: 1px solid #ccc; border-radius: 6px;
+    }
+    button {
+      width: 100%; background: #6c63ff; color: white;
+      border: none; padding: 10px; border-radius: 6px;
+      font-weight: bold; cursor: pointer;
+    }
+    button:hover { background: #5848d8; }
+    p { text-align: center; margin-top: 10px; }
+    a { color: #6c63ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+    <h2>Seller Login</h2>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+    <p>Don’t have an account? <a href="{% url 'seller_signup' %}">Sign up</a></p>
+  </form>
+</body>
+</html>

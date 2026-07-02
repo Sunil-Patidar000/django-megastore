@@ -40,7 +40,7 @@
             </div>
             
             <div class="seller">
-                <a href="#"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
+                <a href="{% url 'seller_login' %}"><img src="{% static 'image/seller.svg' %}" alt="seller" class="links_img">
                 Become a Seller
                 </a>
             </div>
@@ -56,21 +56,40 @@
     </nav>
 
     <!-- cart hero section -->
-    <div class="main_cart">
-        <div class="cart_details">
-            <div class="main_section">
-                <div class="cart-card" style="border-top: none;">1</div>
-                <div class="cart-card">2</div>
-                
+<div class="main_cart">
+  <div class="cart_details">
+    <div class="main_section">
+
+      {% if cart_items %}
+        {% for item in cart_items %}
+          <div class="cart-card">
+            <div class="product_img">
+              <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
             </div>
-            <div class="place_order">
-                <button type="Submit" class="place_order_btn">PLACE ORDER</button>
+
+            <div class="product_info">
+              <h3>{{ item.product.name }}</h3>
+              <p>₹{{ item.product.price }} × {{ item.quantity }}</p>
+              <p><strong>Subtotal:</strong> ₹{{ item.product.price|floatformat:2 }}</p>
             </div>
-        </div>
-        <div class="price_cart">
-            total price
-        </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>Your cart is empty 😔</p>
+      {% endif %}
+
     </div>
+
+    <div class="place_order">
+      <a href="{% url 'place_order' %}" class="place_order_btn">PLACE ORDER</a>
+    </div>
+
+  <div class="price_cart">
+    <h3>Total Price: ₹{{ total }}</h3>
+  </div>
+</div>
+
+
 
     <!-- cart footer -->
 
